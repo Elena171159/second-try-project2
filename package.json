@@ -1,0 +1,23 @@
+{
+  "name": "second-try-project2",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lena",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "jest": "^29.6.2",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
+}
