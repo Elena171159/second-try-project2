@@ -1,0 +1,2 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/cdf32ec602d68a83bfc4/maintainability)](https://codeclimate.com/github/Elena171159/second-try-project2/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cdf32ec602d68a83bfc4/test_coverage)](https://codeclimate.com/github/Elena171159/second-try-project2/test_coverage)
