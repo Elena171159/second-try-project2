@@ -29,22 +29,22 @@ const compareFiles = (path1, path2) => {
   });
   return res;
 };
-
 const makeTree = (mas) => {
   const tree = mas.map((line) => {
     switch (line.status) {
       case 'added':
-        return `+ ${line.name}: ${line.value}`;
+        return `  + ${line.name}: ${line.value}`;
       case 'deleted':
-        return `- ${line.name}: ${line.value}`;
+        return `  - ${line.name}: ${line.value}`;
       case 'unchanged':
-        return `  ${line.name}: ${line.value}`;
+        return `    ${line.name}: ${line.value}`;
       case 'changed':
-        return `- ${line.name}: ${line.oldValue}\n+ ${line.name}: ${line.newValue}`;
+        return `  - ${line.name}: ${line.oldValue}\n  + ${line.name}: ${line.newValue}`;
       default:
         throw new Error('Invalid type');
     }
   });
-  return tree.join('\n');
+  return `{\n${tree.join('\n')}\n}`;
 };
+// console.log(makeTree(treem));
 export { makeTree, compareFiles };
