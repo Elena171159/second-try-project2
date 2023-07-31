@@ -46,5 +46,4 @@ const makeTree = (mas) => {
   });
   return `{\n${tree.join('\n')}\n}`;
 };
-// console.log(makeTree(treem));
 export { makeTree, compareFiles };
