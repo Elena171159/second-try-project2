@@ -1,6 +1,11 @@
+---
+
+plugins:
+  - jest
+
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
-  browser: true
-  es2021: true
+  node: true
 
 extends:
   - 'airbnb-base'
@@ -11,7 +16,7 @@ parserOptions:
 
 rules:
   no-console: 0
-  import/extensions:
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
     - js: always

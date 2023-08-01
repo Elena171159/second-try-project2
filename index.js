@@ -1,15 +1,27 @@
 import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
+import yaml from 'js-yaml';
 
 const findTheUltimatePath = (fileP) => {
   const currDir = process.cwd();
   const filePath = path.resolve(currDir, fileP).trim();
   return filePath;
 };
+const readFile = (filePath) => {
+  const fileData = fs.readFileSync(findTheUltimatePath(filePath), 'utf-8');
+  const ext = path.extname(filePath);
+  if (ext === '.json') {
+    return JSON.parse(fileData);
+  }
+  if (ext === '.yml' || ext === '.yaml') {
+    return yaml.load(fileData);
+  }
+  return console.log(('Unknown file format'));
+};
 const compareFiles = (path1, path2) => {
-  const data1 = JSON.parse(fs.readFileSync(findTheUltimatePath(path1), 'utf-8'));
-  const data2 = JSON.parse(fs.readFileSync(findTheUltimatePath(path2), 'utf-8'));
+  const data1 = readFile(path1);
+  const data2 = readFile(path2);
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
   const unionKeys = [...keys1, ...keys2].sort();
